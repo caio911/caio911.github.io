@@ -26,7 +26,7 @@
 
 		#images li{
 			list-style: none;
-			width: 240;
+			width: 240px;
 		    height: 180px;
 		    background-size: cover;
 		    display: inline-block;
@@ -150,13 +150,13 @@
 
 					var html = '';
 
-				 	var url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=bb63c49b42eee06f8d0a60fa7f73b5ad&tags="+search+"&safe_search=1&per_page=6&size=medium";
+				 	var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=bb63c49b42eee06f8d0a60fa7f73b5ad&tags="+search+"&safe_search=1&per_page=6&size=medium";
 					var src;
 					$.getJSON(url + "&format=json&jsoncallback=?", function(data){
 					    $.each(data.photos.photo, function(i,item){
 					    	console.log(item);
 
-				        	src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
+				        	src = "https://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
 
 					        html += '<li>';
 					        	html+= '<div class="imageBackground" style="background-image:url('+src+')"></div>'
